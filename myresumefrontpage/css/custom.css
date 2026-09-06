@@ -1,0 +1,153 @@
+/* ===== Custom theme: modern & bold palette, flatter cards, animated hero ===== */
+
+:root {
+  --accent: #6d5efc;
+  --accent-dark: #5342c4;
+  --accent-2: #22d3ee;
+  --accent-3: #ff6ec7;
+  --ink: #14142b;
+
+  /* Re-point Bootstrap's variables so components built on them (bg-primary,
+     text-primary, links) pick up the new palette without touching styles.css */
+  --bs-primary-rgb: 109, 94, 252;
+  --bs-link-color: var(--accent);
+  --bs-link-hover-color: var(--accent-dark);
+  --bs-body-bg: #f7f7fc;
+}
+
+body {
+  background: var(--bs-body-bg);
+}
+
+/* Nav / sidebar */
+#sideNav.bg-primary {
+  background: linear-gradient(160deg, var(--ink) 0%, #2b1f6b 55%, var(--accent) 130%) !important;
+}
+.social-icons .social-icon:hover {
+  background-color: var(--accent);
+}
+
+/* Buttons (component-scoped vars are pre-baked at compile time, so override directly) */
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--accent-dark);
+  --bs-btn-hover-border-color: var(--accent-dark);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--accent-dark);
+  --bs-btn-active-border-color: var(--accent-dark);
+  --bs-btn-focus-shadow-rgb: 109, 94, 252;
+  --bs-btn-disabled-bg: var(--accent);
+  --bs-btn-disabled-border-color: var(--accent);
+}
+
+/* ===== Flatten cards: soft shadow instead of hard borders ===== */
+.card {
+  --bs-card-border-width: 0;
+  border-radius: 1rem;
+  box-shadow: 0 6px 24px rgba(20, 20, 43, 0.07);
+}
+
+.card-header.section-header {
+  background: transparent !important;
+  color: var(--ink) !important;
+  font-size: 1.6rem !important;
+  font-weight: 800;
+  border-bottom: 3px solid var(--accent) !important;
+  padding: 0 0 0.75rem 0 !important;
+  margin-bottom: 1rem;
+}
+
+/* Project cards: minimal separation, gentle lift on hover */
+.project-card {
+  box-shadow: 0 3px 14px rgba(20, 20, 43, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(109, 94, 252, 0.2);
+}
+.project-card .card-title {
+  color: var(--ink);
+}
+
+/* ===== Animated hero background (About section) ===== */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-bg .blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.35;
+  animation: drift 18s ease-in-out infinite;
+  will-change: transform;
+}
+.hero-bg .blob-1 {
+  width: 26rem;
+  height: 26rem;
+  background: var(--accent);
+  top: -8rem;
+  left: -6rem;
+}
+.hero-bg .blob-2 {
+  width: 20rem;
+  height: 20rem;
+  background: var(--accent-2);
+  top: 2rem;
+  right: -4rem;
+  animation-delay: -6s;
+}
+.hero-bg .blob-3 {
+  width: 16rem;
+  height: 16rem;
+  background: var(--accent-3);
+  bottom: -6rem;
+  left: 30%;
+  animation-delay: -11s;
+}
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(2rem, -1.5rem) scale(1.08); }
+  66% { transform: translate(-1.5rem, 1.5rem) scale(0.95); }
+}
+.hero-section .resume-section-content {
+  position: relative;
+  z-index: 1;
+}
+
+.tagline {
+  font-family: var(--bs-font-monospace);
+  font-size: 1.3rem;
+  color: var(--accent-dark);
+  min-height: 1.8em;
+}
+.tagline .cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  vertical-align: -0.2em;
+  background: var(--accent);
+  margin-left: 2px;
+  animation: blink 0.9s step-end infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg .blob,
+  .tagline .cursor {
+    animation: none;
+  }
+}
