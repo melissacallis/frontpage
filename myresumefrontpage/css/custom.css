@@ -151,3 +151,39 @@ body {
     animation: none;
   }
 }
+
+/* ===== Skills card: spiral-bound notebook page ===== */
+.notebook-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #fffdf7 0px,
+      #fffdf7 27px,
+      #dbe6f4 28px,
+      #fffdf7 29px
+    );
+  padding-left: 3.75rem;
+}
+.notebook-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3.25rem;
+  background-color: #f1ece1;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0OCcgaGVpZ2h0PSc0NCc+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9J21ldGFsJyB4MT0nMCcgeTE9JzAnIHgyPScxJyB5Mj0nMCc+CiAgICAgIDxzdG9wIG9mZnNldD0nMCUnIHN0b3AtY29sb3I9JyNmYWZhZmEnLz4KICAgICAgPHN0b3Agb2Zmc2V0PSczMCUnIHN0b3AtY29sb3I9JyNjMmMyYzInLz4KICAgICAgPHN0b3Agb2Zmc2V0PSc1MCUnIHN0b3AtY29sb3I9JyM3ZDdkN2QnLz4KICAgICAgPHN0b3Agb2Zmc2V0PSc3MiUnIHN0b3AtY29sb3I9JyNlNmU2ZTYnLz4KICAgICAgPHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjNWM1YzVjJy8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8ZWxsaXBzZSBjeD0nMTAnIGN5PScyMicgcng9JzQuNScgcnk9JzYnIGZpbGw9JyNjN2JmYTknIG9wYWNpdHk9JzAuNTUnLz4KICA8ZWxsaXBzZSBjeD0nMjUnIGN5PScyMicgcng9JzE3JyByeT0nMjInIGZpbGw9J25vbmUnIHN0cm9rZT0ndXJsKCNtZXRhbCknIHN0cm9rZS13aWR0aD0nNi41Jy8+Cjwvc3ZnPgo=");
+  background-repeat: repeat-y;
+  background-position: left top;
+  background-size: 48px 44px;
+  box-shadow: inset -4px 0 8px -4px rgba(0, 0, 0, 0.15);
+  z-index: 0;
+}
+.notebook-card > .card-header,
+.notebook-card > .card-body {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
+}
