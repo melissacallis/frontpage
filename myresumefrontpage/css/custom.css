@@ -152,19 +152,17 @@ body {
   }
 }
 
-/* ===== Spiral-bound notebook page (used for the hero skills list) ===== */
+/* ===== Watercolor journal page (used for the hero skills list) ===== */
 .notebook-card {
   position: relative;
   overflow: hidden;
   background:
-    repeating-linear-gradient(
-      to bottom,
-      #fbf7ee 0px,
-      #fbf7ee 27px,
-      #ddd2b8 28px,
-      #fbf7ee 29px
-    );
-  padding-left: 3.75rem;
+    radial-gradient(ellipse 55% 40% at 12% 15%, rgba(109, 94, 252, 0.18), transparent 70%),
+    radial-gradient(ellipse 45% 35% at 90% 10%, rgba(255, 110, 199, 0.15), transparent 70%),
+    radial-gradient(ellipse 55% 45% at 85% 90%, rgba(34, 211, 238, 0.13), transparent 70%),
+    radial-gradient(ellipse 60% 45% at 15% 90%, rgba(109, 94, 252, 0.15), transparent 70%),
+    #f9f7ff;
+  padding-left: 3.5rem;
 }
 .notebook-card::before {
   content: "";
@@ -172,13 +170,11 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 3.25rem;
-  background-color: #e5d9bd;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI2NCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJvZHkxIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM0YTRhNGEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIzNSUiIHN0b3AtY29sb3I9IiMwYzBjMGMiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiMwMDAwMDAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiMxYzFjMWMiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGZpbHRlciBpZD0iYmx1ciIgeD0iLTUwJSIgeT0iLTUwJSIgd2lkdGg9IjIwMCUiIGhlaWdodD0iMjAwJSI+CiAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEuNCIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgoKICA8ZWxsaXBzZSBjeD0iMjciIGN5PSI1OSIgcng9IjUiIHJ5PSI3IiBmaWxsPSIjMDAwMDAwNTUiLz4KCiAgPGcgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KICAgIDxwYXRoIGQ9Ik0gNDggMyBDIDE0IDMsIDE0IDU1LCA0OCA1NSIgc3Ryb2tlPSIjMDAwMDAwIiBvcGFjaXR5PSIwLjMiIHN0cm9rZS13aWR0aD0iOCIgZmlsdGVyPSJ1cmwoI2JsdXIpIi8+CiAgICA8cGF0aCBkPSJNIDQ4IDMgQyAxNCAzLCAxNCA1NSwgNDggNTUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSI4LjUiLz4KICAgIDxwYXRoIGQ9Ik0gNDggMyBDIDE0IDMsIDE0IDU1LCA0OCA1NSIgc3Ryb2tlPSJ1cmwoI2JvZHkxKSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CiAgICA8cGF0aCBkPSJNIDQ1IDYgQyAxOCA2LCAxOCA1MiwgNDUgNTMiIHN0cm9rZT0iI2JmYmZiZiIgc3Ryb2tlLXdpZHRoPSIxLjQiIG9wYWNpdHk9IjAuNzUiLz4KICA8L2c+Cjwvc3ZnPgo=");
+  width: 3rem;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI1NCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InJpbmdib2R5IiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNiM2E4ZTgiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI0NSUiIHN0b3AtY29sb3I9IiM4YjdjZDgiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNmQ1ZWZjIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB4PSIxMCIgeT0iNSIgd2lkdGg9IjI4IiBoZWlnaHQ9IjQyIiByeD0iMTQiIHJ5PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI3Jpbmdib2R5KSIgc3Ryb2tlLXdpZHRoPSI3Ii8+CiAgPHJlY3QgeD0iMTMiIHk9IjgiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNiIgcng9IjciIHJ5PSI3IiBmaWxsPSJub25lIiBzdHJva2U9IiNlZmVhZmYiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC43Ii8+Cjwvc3ZnPgo=");
   background-repeat: repeat-y;
   background-position: left top;
-  background-size: 52px 64px;
-  box-shadow: inset -4px 0 8px -4px rgba(0, 0, 0, 0.15);
+  background-size: 48px 54px;
   z-index: 0;
 }
 .notebook-card > * {
