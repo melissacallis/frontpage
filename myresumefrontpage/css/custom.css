@@ -152,7 +152,7 @@ body {
   }
 }
 
-/* ===== Skills card: spiral-bound notebook page ===== */
+/* ===== Spiral-bound notebook page (used for the hero skills list) ===== */
 .notebook-card {
   position: relative;
   overflow: hidden;
@@ -181,9 +181,135 @@ body {
   box-shadow: inset -4px 0 8px -4px rgba(0, 0, 0, 0.15);
   z-index: 0;
 }
-.notebook-card > .card-header,
-.notebook-card > .card-body {
+.notebook-card > * {
   position: relative;
   z-index: 1;
-  background: transparent !important;
+}
+
+.hero-notebook {
+  padding-top: 1.5rem;
+  padding-right: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 28px rgba(20, 20, 43, 0.1);
+}
+.skills-bullet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 2rem;
+}
+.skills-bullet-list li {
+  position: relative;
+  padding-left: 1.35rem;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--ink);
+  break-inside: avoid;
+}
+.skills-bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+@media (max-width: 767.98px) {
+  .skills-bullet-list {
+    columns: 1;
+  }
+}
+
+/* ===== Skills & Projects card ===== */
+.dev-icons.list-inline {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.dev-icons .skill-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 84px;
+  height: 84px;
+  margin: 0 0.6rem 0.8rem 0;
+  border-radius: 14px;
+  background: #f4f3ff;
+  box-shadow: 0 3px 10px rgba(20, 20, 43, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.dev-icons .skill-chip i {
+  color: var(--accent-dark);
+  font-size: 1.7rem;
+}
+.dev-icons .skill-chip span {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #6b6b85;
+}
+.dev-icons .skill-chip:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(109, 94, 252, 0.18);
+  background: #ece9ff;
+}
+.dev-icons .skill-chip:hover i {
+  color: var(--accent);
+}
+
+ul.workflow-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.workflow-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  font-size: 1rem;
+  color: var(--ink);
+  border-bottom: 1px dashed #e3e1f5;
+}
+ul.workflow-list li:last-child {
+  border-bottom: none;
+}
+.workflow-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  flex: 0 0 auto;
+}
+
+.projects-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.projects-heading h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0;
+  white-space: nowrap;
+}
+.projects-heading::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(to right, var(--accent), rgba(109, 94, 252, 0));
 }
